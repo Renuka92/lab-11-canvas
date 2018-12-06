@@ -1,7 +1,7 @@
 <html>
-<body onload="draw()">
+<body>
 
-<canvas id="canvas1" width="500" height="500"></canvas>
+<canvas id="canvas1" width="700" height="700"></canvas>
 
 <script>
 
@@ -9,24 +9,27 @@ function draw() {
         var sketch = document.getElementById('sketch');
         var context = canvas1.getContext("2d");
 	
-	for (x=10; x<=100; x=x+15)
-    {
-		if (x%2==0){
-			context.fillStyle="#e37285";
-			context.fillRect(x, 50, 50, 50);
+	x=30
+	y=70
+	for (i=1; i<=10; i=i+1){
+		if (i%2==0){
+		        context.fillStyle="#3ae6b1";
+        		context.beginPath();
+		        context.arc(x, 125, 25, 0, 2 * Math.PI, true);
+		        context.closePath();
+		        context.fill();
+			x=x+130
 		}
-
 		else{
-			context.fillStyle="#3ae6b1";
-			context.beginPath();
-			context.arc(x, 75, 25, 0, 2*Math.PI, true);
-			context.closePath();
-			context.fill();
+			context.fillStyle="#e37285";
+                        context.fillRect(y, 100, 50, 50);
+                        y=y+130
 		}
 	}
 }
 
-</script>
+draw()
 
+</script>
 </body>
 </html>
